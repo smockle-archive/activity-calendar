@@ -1,11 +1,14 @@
-// Strava
-require("dotenv-safe").load();
-var strava = require("strava-v3");
+require = require('@std/esm')(module)
+module.exports = require('./main.mjs').default
 
-strava.athlete.get({}, function(err, payload, limits) {
+// Strava
+require('dotenv-safe').load()
+var strava = require('strava-v3')
+
+strava.athlete.get({}, function (err, payload, limits) {
   if (!err) {
-    console.log(payload);
+    console.log(payload)
   } else {
-    console.log(err);
+    console.log(err)
   }
-});
+})
