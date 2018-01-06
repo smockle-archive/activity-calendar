@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="124px" height="124px" viewBox="0 0 124 124" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch Beta 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>Logo #4</title>
+    <desc>Created with Sketch Beta.</desc>
+    <defs>
+        <circle id="path-1" cx="32.5" cy="12.5" r="2.5"></circle>
+        <filter x="-200.0%" y="-160.0%" width="500.0%" height="500.0%" filterUnits="objectBoundingBox" id="filter-2">
+            <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="3" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.24 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+        <circle id="path-3" cx="89.5" cy="12.5" r="2.5"></circle>
+        <filter x="-200.0%" y="-160.0%" width="500.0%" height="500.0%" filterUnits="objectBoundingBox" id="filter-4">
+            <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="3" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.24 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+        <path d="M79,105 L62,71 L45,105 L27,105 L62,35 L97,105 L79,105 Z" id="path-5"></path>
+        <filter x="-10.0%" y="-7.1%" width="120.0%" height="120.0%" filterUnits="objectBoundingBox" id="filter-6">
+            <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="2" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.12 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Logo-#4">
+            <path d="M19,5 L105,5 C107.209139,5 109,6.790861 109,9 L109,115 C109,117.209139 107.209139,119 105,119 L19,119 C16.790861,119 15,117.209139 15,115 L15,9 C15,6.790861 16.790861,5 19,5 Z" id="Background" fill="#BBBBBB"></path>
+            <g id="Path">
+                <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-1"></use>
+            </g>
+            <g id="Path">
+                <use fill="black" fill-opacity="1" filter="url(#filter-4)" xlink:href="#path-3"></use>
+                <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-3"></use>
+            </g>
+            <path d="M14.3608189,69 L108.74208,69 L118.90207,114.121318 C119.387353,116.276497 118.033635,118.417014 115.878456,118.902296 C115.590072,118.967232 115.295378,119 114.999774,119 L8.99946425,119 C6.79032525,119 4.99946425,117.209139 4.99946425,115 C4.99946425,114.729759 5.02685033,114.460214 5.08120276,114.195496 L14.3608189,69 Z" id="Bottom" fill="#FC4C02"></path>
+            <path d="M9.00073543,20 L115.000037,20 C117.209176,20 119.000037,21.790861 119.000037,24 C119.000037,24.2875049 118.969041,24.5741719 118.907584,24.8550316 L109.029167,70 L14.0675759,70 L5.07751524,24.7799637 C4.64675318,22.613229 6.05403704,20.5075419 8.22077171,20.0767798 C8.47761947,20.0257167 8.73886101,20 9.00073543,20 Z" id="Top" fill="#FC4C02"></path>
+            <g id="A">
+                <use fill="black" fill-opacity="1" filter="url(#filter-6)" xlink:href="#path-5"></use>
+                <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-5"></use>
+            </g>
+            <path d="M9.00073543,20 L115.000037,20 C117.209176,20 119.000037,21.790861 119.000037,24 C119.000037,24.2875049 118.969041,24.5741719 118.907584,24.8550316 L109.029167,70 L14.0675759,70 L5.07751524,24.7799637 C4.64675318,22.613229 6.05403704,20.5075419 8.22077171,20.0767798 C8.47761947,20.0257167 8.73886101,20 9.00073543,20 Z" id="Top" fill-opacity="0.12" fill="#000000"></path>
+        </g>
+    </g>
+</svg>
