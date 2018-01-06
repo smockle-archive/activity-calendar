@@ -55,8 +55,8 @@ test('toEvent, with latlon', t => {
   }
   const expected = {
     title: 'Morning Run (2 mi)',
-    start: [2018, 1, 2, 8, 38],
-    duration: { seconds: 1092 },
+    start: [2018, 1, 2, 8, 40],
+    duration: { minutes: 20 },
     url: 'https://www.strava.com/activities/1330000001',
     geo: { lat: 37.77, lon: -122.41 },
     uid: '73cbb678-92ff-46c2-9fae-4243ed307125'
@@ -121,8 +121,8 @@ test('toEvent, without latlon', t => {
   }
   const expected = {
     title: 'Afternoon Run (0.6 mi)',
-    start: [2017, 12, 31, 16, 53],
-    duration: { seconds: 337 },
+    start: [2017, 12, 31, 16, 55],
+    duration: { minutes: 5 },
     url: 'https://www.strava.com/activities/1330000002',
     uid: '73cbb678-92ff-46c2-9fae-4243ed307125'
   }
