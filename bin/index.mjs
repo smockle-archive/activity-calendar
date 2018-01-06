@@ -10,14 +10,11 @@
 //   }
 // })
 
+import * as ics from 'ics'
 import { activities } from '../data/activities'
 import toEvent from '../lib/to-event'
 
-console.log(activities.map(toEvent))
-
-// activities.map(toEvent).map(event => {
-//   ics.createEvent(event, (error, value) => {
-//     if (error) throw error
-//     console.log(value)
-//   })
-// })
+ics.createEvent(activities.map(toEvent), 'smockle/ics', (error, value) => {
+  if (error) throw error
+  console.log(value)
+})
