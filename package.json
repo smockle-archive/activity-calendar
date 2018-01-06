@@ -4,6 +4,7 @@
   "description": "Make Strava activities available as a calendar (compatible with Google Calendar)",
   "main": "index.js",
   "scripts": {
+    "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -17,6 +18,7 @@
   },
   "homepage": "https://github.com/smockle/activity-calendar#readme",
   "dependencies": {
+    "dotenv-safe": "^4.0.4",
     "strava-v3": "^1.14.0"
   }
 }
