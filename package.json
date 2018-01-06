@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/smockle/activity-calendar/issues"
   },
-  "homepage": "https://github.com/smockle/activity-calendar#readme"
+  "homepage": "https://github.com/smockle/activity-calendar#readme",
+  "dependencies": {
+    "strava-v3": "^1.14.0"
+  }
 }
