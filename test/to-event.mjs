@@ -1,8 +1,7 @@
 import toEvent from '../lib/to-event'
 import test from 'tape'
 
-test('toEvent, with latlon', t => {
-  t.plan(7)
+test('toEvent, with latlon', async t => {
   const activity = {
     id: 1330000001,
     resource_state: 2,
@@ -58,10 +57,11 @@ test('toEvent, with latlon', t => {
     start: [2018, 1, 2, 8, 40],
     duration: { minutes: 20 },
     url: 'https://www.strava.com/activities/1330000001',
+    location: '1201 Bryant St, San Francisco, CA 94103, USA',
     geo: { lat: 37.77, lon: -122.41 },
     uid: '73cbb678-92ff-46c2-9fae-4243ed307125'
   }
-  const actual = toEvent(activity)
+  const actual = await toEvent(activity)
   t.equal(actual.title, expected.title, 'title')
   t.deepEqual(actual.start, expected.start, 'start')
   t.deepEqual(actual.duration, expected.duration, 'duration')
@@ -71,10 +71,10 @@ test('toEvent, with latlon', t => {
   const { uid: _, ...expectedWithoutUID } = expected
   const { uid: __, ...actualWithoutUID } = actual
   t.deepEqual(expectedWithoutUID, actualWithoutUID, 'default')
+  t.end()
 })
 
-test('toEvent, without latlon', t => {
-  t.plan(5)
+test('toEvent, without latlon', async t => {
   const activity = {
     id: 1330000002,
     resource_state: 2,
@@ -126,7 +126,7 @@ test('toEvent, without latlon', t => {
     url: 'https://www.strava.com/activities/1330000002',
     uid: '73cbb678-92ff-46c2-9fae-4243ed307125'
   }
-  const actual = toEvent(activity)
+  const actual = await toEvent(activity)
   t.equal(actual.title, expected.title, 'title')
   t.deepEqual(actual.start, expected.start, 'start')
   t.deepEqual(actual.duration, expected.duration, 'duration')
@@ -134,4 +134,5 @@ test('toEvent, without latlon', t => {
   const { uid: _, ...expectedWithoutUID } = expected
   const { uid: __, ...actualWithoutUID } = actual
   t.deepEqual(expectedWithoutUID, actualWithoutUID, 'default')
+  t.end()
 })
