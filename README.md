@@ -4,9 +4,6 @@
 
 Make Strava activities available as a calendar (compatible with Google Calendar)
 
-* [ ] get all activites, not just 30
-* [ ] store activities in a db
-
 ## Testing
 
 `activity-calendar` includes several unit tests. After cloning the `activity-calendar` repo locally, run `npm install` in the project folder to install dependencies. Run `npm test` to execute the tests.
