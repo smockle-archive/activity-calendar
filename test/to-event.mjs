@@ -57,7 +57,7 @@ test('toEvent, with latlon', async t => {
     start: [2018, 1, 2, 8, 40],
     duration: { minutes: 20 },
     url: 'https://www.strava.com/activities/1330000001',
-    location: '1201 Bryant St, San Francisco, CA 94103, USA',
+    location: '1201 Bryant St\\, San Francisco\\, CA 94103\\, USA',
     geo: { lat: 37.77, lon: -122.41 },
     uid: '73cbb678-92ff-46c2-9fae-4243ed307125'
   }
