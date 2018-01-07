@@ -10,6 +10,7 @@ export default function (request, response) {
         const events = await Promise.all(activities.map(toEvent))
         createCalendar(events, 'smockle/ics', (error, events) => {
           if (error) response.send(error)
+          response.set({ 'content-type': 'text/calendar; charset=utf-8' })
           response.send(events)
         })
       } else {
