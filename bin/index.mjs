@@ -1,9 +1,12 @@
 #!/usr/bin/env node
-import * as ics from 'ics'
+import { createEvent as createCalendar } from 'ics'
 import { activities } from '../data/activities'
 import toEvent from '../lib/to-event'
-
-ics.createEvent(activities.map(toEvent), 'smockle/ics', (error, value) => {
-  if (error) throw error
-  console.log(value)
-})
+  ;(async function () {
+  const events = await Promise.all(activities.slice(0, 1).map(toEvent))
+  console.log(events)
+})()
+// createCalendar(events, 'smockle/ics', (error, value) => {
+//   if (error) throw error
+//   console.log(value)
+// })
