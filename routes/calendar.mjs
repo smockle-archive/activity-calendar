@@ -5,7 +5,7 @@ require('dotenv-safe').load()
 
 export default function (request, response) {
   strava.athlete.listActivities(
-    { access_token: request.params.access_token },
+    { access_token: request.params.access_token, page: 1, per_page: 200 },
     async (error, activities, limits) => {
       if (!error) {
         const events = await Promise.all(activities.map(toEvent))
