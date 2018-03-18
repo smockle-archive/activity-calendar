@@ -1,11 +1,19 @@
+import serverless from 'serverless-http'
 import express from 'express'
-import activities from './routes/activities'
-import calendar from './routes/calendar'
-require('dotenv-safe').load()
+import ingest from './routes/ingest'
+import bodyParser from 'body-parser'
+import dotenv from 'dotenv-safe'
+dotenv.load()
 
 const app = express()
-app.get('/activities/:access_token', activities)
-app.get('/calendar/:access_token', calendar)
+app.use(
+  bodyParser.urlencoded({
+    extended: true
+  })
+)
+app.use(bodyParser.json())
+app.post('/ingest', ingest)
 app.listen(process.env.PORT, () =>
   console.log(`Listening on port ${process.env.PORT}`)
 )
+export const handler = serverless(app)

@@ -1,4 +1,6 @@
 #!/usr/bin/env node
 
 require = require('@std/esm')(module)
-require('./index.mjs')
+module.exports = {
+  handler: require('./index.mjs').handler
+}

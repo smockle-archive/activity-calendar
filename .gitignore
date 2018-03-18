@@ -1,5 +1,14 @@
+# package directories
 node_modules
-data
+jspm_packages
+
+# Serverless directories
+.serverless
+
+# Webpack directories
+.webpack
+
+# dotfiles
+.env
 *.log
 .DS_Store
-.env
