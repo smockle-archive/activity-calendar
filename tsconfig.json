@@ -12,8 +12,6 @@
   "files": [
     "src/bin/index.js.ts",
     "src/bin/index.mjs.ts",
-    "src/lib/index.js.ts",
-    "src/lib/index.mjs.ts",
     "src/lib/to-miles.mjs.ts"
   ]
 }

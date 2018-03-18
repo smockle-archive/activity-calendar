@@ -5,8 +5,8 @@
   "files": [
     "dist"
   ],
-  "main": "dist/lib/index",
-  "types": "dist/lib/index.d.ts",
+  "main": "dist/bin/index",
+  "types": "dist/bin/index.d.ts",
   "scripts": {
     "build": "bash scripts/build.sh",
     "start": "serverless offline start --location dist/bin",

@@ -1,6 +1,6 @@
 import { Handler, Context, Callback } from "aws-lambda";
 import { round } from "lodash";
-import * as request from "request-promise";
+import { post } from "request-promise";
 import { toMiles } from "../lib/to-miles.mjs";
 import { load as dotenv } from "dotenv-safe";
 dotenv();
@@ -8,11 +8,23 @@ dotenv();
 export interface HandlerRequest {
   [key: string]: any;
   body: {
-    [key: string]: any;
+    /** The activity type, e.g. "Run" */
+    activityType: string;
+    /** The activity start time, e.g "March 17, 2018 at 02:00PM" */
     createdAt: string;
-    name: string;
+    /** The activity distance, in meters, e.g. "21375.5" */
     distanceMeters: string;
+    /** The activity duration, in hours, minutes and seconds, e.g. "2 hours, 5 minutes, 15 seconds" */
+    elapsedTime: string;
+    /** The activity duration, in seconds, e.g. "7515" */
     elapsedTimeInSeconds: string;
+    /** The activity URL on the Strava website, e.g. "http://www.strava.com/activities/1446540000" */
+    linkToActivity: string;
+    /** The activity name, e.g. "Afternoon Run" */
+    name: string;
+    /** The activity route image URL on the Strava website */
+    routeMapImageURL?: string;
+    [key: string]: any;
   };
 }
 
@@ -49,7 +61,7 @@ export const handler: Handler = (
       message: "Message sent!"
     })
   };
-  request(options)
+  post(options)
     .then(() => callback(null, response))
     .catch(error => callback(error));
 };

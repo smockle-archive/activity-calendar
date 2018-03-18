@@ -10,7 +10,7 @@ functions:
     events:
       - http:
           path: ingest
-          method: get
+          method: post
 
 plugins:
   - serverless-offline
