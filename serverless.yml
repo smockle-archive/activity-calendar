@@ -1,4 +1,4 @@
-service: ifttt-activity-calendar
+service: activity-calendar
 
 provider:
   name: aws
@@ -11,9 +11,5 @@ functions:
       - http: ANY /
       - http: 'ANY {proxy+}'
 
-custom:
-  webpackIncludeModules: true
-
 plugins:
   - serverless-offline
-  - serverless-webpack

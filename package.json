@@ -1,58 +1,49 @@
 {
-  "name": "ifttt-activity-calendar",
+  "name": "activity-calendar",
   "version": "1.0.0",
   "description": "Formats data from the IFTTT Strava service for the IFTTT Google Calendar service.",
-  "main": "lib/index.js",
-  "module": "lib/index.mjs",
+  "files": [
+    "dist"
+  ],
+  "main": "dist/lib/index",
+  "types": "dist/lib/index.d.ts",
   "scripts": {
-    "start": "node -r @std/esm index.mjs",
-    "debug": "node --nolazy --inspect-brk=5858 -r @std/esm index.mjs",
-    "test": "node -r @std/esm test/index.mjs | colortape"
+    "build": "bash scripts/build.sh",
+    "start": "node -r @std/esm dist/bin/index.mjs",
+    "debug": "node --nolazy --inspect-brk=5858 -r @std/esm dist/bin/index.mjs",
+    "test": "jest"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/smockle/ifttt-activity-calendar.git"
+    "url": "git+https://github.com/smockle/activity-calendar.git"
   },
-  "author": "Clay Miller <clay@smockle.com> (https://smockle.com)",
+  "author": "Clay Miller <clay@smockle.com> (https://www.smockle.com)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/smockle/ifttt-activity-calendar/issues"
+    "url": "https://github.com/smockle/activity-calendar/issues"
   },
-  "homepage": "https://github.com/smockle/ifttt-activity-calendar#readme",
+  "homepage": "https://github.com/smockle/activity-calendar#readme",
   "@std/esm": {
     "cjs": true
   },
   "dependencies": {
     "@std/esm": "^0.19.0",
-    "await-to-js": "^2.0.1",
-    "babel-runtime": "^6.26.0",
     "body-parser": "^1.18.2",
     "dotenv-safe": "^4.0.4",
     "express": "^4.16.2",
     "lodash": "^4.17.4",
     "request": "^2.83.0",
     "request-promise": "^4.2.2",
-    "serverless-http": "^1.5.3",
-    "source-map-support": "^0.5.3"
+    "serverless-http": "^1.5.3"
   },
   "devDependencies": {
-    "babel-core": "^6.26.0",
-    "babel-loader": "^7.1.2",
-    "babel-plugin-source-map-support": "^1.0.0",
-    "babel-plugin-transform-runtime": "^6.23.0",
-    "babel-preset-env": "^1.6.1",
-    "babel-preset-stage-3": "^6.24.1",
-    "colortape": "^0.1.2",
-    "eslint-config-standard": "^11.0.0-beta.0",
-    "eslint-plugin-import": "^2.8.0",
-    "eslint-plugin-node": "^5.2.1",
-    "eslint-plugin-promise": "^3.6.0",
-    "eslint-plugin-standard": "^3.0.1",
-    "prettier-eslint-cli": "^4.7.0",
+    "@types/dotenv-safe": "^4.0.1",
+    "@types/jest": "^22.2.0",
+    "@types/lodash": "^4.14.105",
+    "@types/node": "^9.4.7",
+    "jest": "^22.4.2",
     "serverless-offline": "^3.18.0",
-    "serverless-webpack": "^4.3.0",
-    "shebang-loader": "0.0.1",
-    "webpack": "^3.10.0",
-    "webpack-node-externals": "^1.6.0"
+    "ts-jest": "^22.4.1",
+    "typescript": "^2.8.0-rc"
   }
 }
