@@ -4,6 +4,7 @@ jspm_packages
 
 # built files
 dist
+coverage
 
 # Serverless directories
 .serverless

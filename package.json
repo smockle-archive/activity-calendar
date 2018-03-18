@@ -9,8 +9,7 @@
   "types": "dist/lib/index.d.ts",
   "scripts": {
     "build": "bash scripts/build.sh",
-    "start": "node -r @std/esm dist/bin/index.mjs",
-    "debug": "node --nolazy --inspect-brk=5858 -r @std/esm dist/bin/index.mjs",
+    "start": "serverless offline start --location dist/bin",
     "test": "jest"
   },
   "repository": {
@@ -28,20 +27,21 @@
   },
   "dependencies": {
     "@std/esm": "^0.19.0",
-    "body-parser": "^1.18.2",
     "dotenv-safe": "^4.0.4",
-    "express": "^4.16.2",
     "lodash": "^4.17.4",
-    "request": "^2.83.0",
-    "request-promise": "^4.2.2",
-    "serverless-http": "^1.5.3"
+    "request": "^2.85.0",
+    "request-promise": "^4.2.2"
   },
   "devDependencies": {
+    "@types/aws-lambda": "0.0.33",
     "@types/dotenv-safe": "^4.0.1",
     "@types/jest": "^22.2.0",
     "@types/lodash": "^4.14.105",
     "@types/node": "^9.4.7",
+    "@types/request": "^2.47.0",
+    "@types/request-promise": "^4.1.41",
     "jest": "^22.4.2",
+    "serverless": "^1.26.1",
     "serverless-offline": "^3.18.0",
     "ts-jest": "^22.4.1",
     "typescript": "^2.8.0-rc"

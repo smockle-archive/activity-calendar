@@ -8,8 +8,9 @@ functions:
   app:
     handler: index.handler
     events:
-      - http: ANY /
-      - http: 'ANY {proxy+}'
+      - http:
+          path: ingest
+          method: get
 
 plugins:
   - serverless-offline
