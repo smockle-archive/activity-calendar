@@ -5,3 +5,5 @@ notifications:
   email:
     on_success: change
     on_failure: always
+after_script:
+  - codecov
