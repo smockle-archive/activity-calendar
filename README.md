@@ -2,6 +2,8 @@
 
 [![Build Status](https://travis-ci.org/smockle/activity-calendar.svg?branch=master)](https://travis-ci.org/smockle/activity-calendar)
 [![codecov](https://codecov.io/gh/smockle/activity-calendar/branch/master/graph/badge.svg)](https://codecov.io/gh/smockle/activity-calendar)
+[![Known Vulnerabilities](https://snyk.io/test/github/smockle/activity-calendar/badge.svg)](https://snyk.io/test/github/smockle/activity-calendar)
+[![Greenkeeper badge](https://badges.greenkeeper.io/smockle/activity-calendar.svg)](https://greenkeeper.io/)
 
 <img alt="activity-calendar logo" height="120" width="120" src="https://user-images.githubusercontent.com/3104489/34644712-a601f428-f2f0-11e7-9ce4-ac3fb94804d1.png">
 
