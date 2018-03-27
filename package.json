@@ -1,21 +1,22 @@
 {
   "name": "activity-calendar",
   "version": "1.0.0",
-  "description": "Make Strava activities available as a calendar (compatible with Google Calendar)",
-  "main": "lib/index.js",
-  "module": "lib/index.mjs",
-  "bin": {
-    "activity-calendar": "bin/index.js"
-  },
+  "description": "Formats data from the IFTTT Strava service for the IFTTT Google Calendar service.",
+  "files": [
+    "dist"
+  ],
+  "main": "dist/bin/index",
+  "types": "dist/bin/index.d.ts",
   "scripts": {
-    "start": "node -r @std/esm index.mjs",
-    "test": "node -r @std/esm test/index.mjs | colortape"
+    "build": "bash scripts/build.sh",
+    "start": "serverless offline start --location dist/bin",
+    "test": "jest"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/smockle/activity-calendar.git"
   },
-  "author": "Clay Miller <clay@smockle.com> (https://smockle.com)",
+  "author": "Clay Miller <clay@smockle.com> (https://www.smockle.com)",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/smockle/activity-calendar/issues"
@@ -26,23 +27,23 @@
   },
   "dependencies": {
     "@std/esm": "^0.19.0",
-    "await-to-js": "^2.0.1",
     "dotenv-safe": "^4.0.4",
-    "express": "^4.16.2",
-    "geocoder": "^0.2.3",
-    "ics": "git+https://github.com/svnindia/ics.git",
     "lodash": "^4.17.4",
-    "memoizee": "^0.4.11",
-    "strava-v3": "^1.14.0",
-    "uuid": "^3.1.0"
+    "request": "^2.85.0",
+    "request-promise": "^4.2.2"
   },
   "devDependencies": {
-    "colortape": "^0.1.2",
-    "eslint-config-standard": "^11.0.0-beta.0",
-    "eslint-plugin-import": "^2.8.0",
-    "eslint-plugin-node": "^5.2.1",
-    "eslint-plugin-promise": "^3.6.0",
-    "eslint-plugin-standard": "^3.0.1",
-    "prettier-eslint-cli": "^4.7.0"
+    "@types/aws-lambda": "0.0.33",
+    "@types/dotenv-safe": "^4.0.1",
+    "@types/jest": "^22.2.0",
+    "@types/lodash": "^4.14.105",
+    "@types/node": "^9.4.7",
+    "@types/request": "^2.47.0",
+    "@types/request-promise": "^4.1.41",
+    "jest": "^22.4.2",
+    "serverless": "^1.26.1",
+    "serverless-offline": "^3.18.0",
+    "ts-jest": "^22.4.1",
+    "typescript": "^2.8.0-rc"
   }
 }
