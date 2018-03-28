@@ -11,6 +11,7 @@
     "build": "bash scripts/build.sh",
     "start": "serverless offline start --location dist/bin",
     "test": "jest",
+    "env": "bash scripts/env.sh",
     "deploy": "sls deploy"
   },
   "repository": {
