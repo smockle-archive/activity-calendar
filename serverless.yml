@@ -6,7 +6,7 @@ provider:
 
 functions:
   app:
-    handler: index.handler
+    handler: dist/bin/index.handler
     events:
       - http:
           path: ingest
