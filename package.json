@@ -39,7 +39,7 @@
     "@types/dotenv-safe": "^4.0.1",
     "@types/jest": "^22.2.0",
     "@types/lodash": "^4.14.105",
-    "@types/node": "^9.4.7",
+    "@types/node": "^10.0.7",
     "@types/request": "^2.47.0",
     "@types/request-promise": "^4.1.41",
     "codecov": "^3.0.0",
