@@ -29,7 +29,7 @@
   },
   "dependencies": {
     "@std/esm": "^0.26.0",
-    "dotenv-safe": "^5.0.1",
+    "dotenv-safe": "^6.0.0",
     "lodash": "^4.17.4",
     "request": "^2.85.0",
     "request-promise": "^4.2.2"
