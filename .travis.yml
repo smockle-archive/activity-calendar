@@ -9,16 +9,6 @@ before_install:
 - npm install -g greenkeeper-lockfile@1
 before_script:
 - greenkeeper-lockfile-update
-- npm run build
 after_script:
 - greenkeeper-lockfile-upload
 - codecov
-env:
-  global:
-    secure: fN1n6kFC4RfPg/ts1hT4rI3shRQighWRQUw7cb2/Sf5T4despLTepDhaPfK1sJ6EJ1Fw8CPSP33MWweXMz66APcsUkSarGZC8oKTk0yoWyUAouUiRfp0dIHROKSwvR3REMhkXohqG2TOqb6Ef7Y41SYreFTuiJRnefdhShxqe7YLr1LhHo6S6H6noqVUvBt/dGmXv3ODudPwn4aRQfN2w30NXfaFizKMxZsG01wWc8grn+Sb2FzAQ1IyHzVFcOQYcagXCoaeOa86K5B2g+sxh1ZVM5H2CszUrZUFolgLT5BaWOE+z8zJCshPBKh7oUItWcmmri/SWnjqBEgS8Bv/y8Woj/6TJOC63c49ikbAtg5qXEdXl9ltBlSj1ktr/SL9HGDk1Ge3WJq1cb9vqqOqyU4nHcyqbrky+1LQVoJ7CFz2Rle4BIesJKZNBRwbxQmDbryshcrxMmDZuxNmjwhwQZ6axUFoqBmTan6+5Fo3BdzEO0sCJJFSyS4hh+PrU41dskfsEDvTYWkzPxwc9OyIICcJpUo65o7aAm9gGeKzidSMZ1kdNNj1IVL25gTM3xzPXDOQrRk4LBX8FpEojYiGMW0zRCZYkPTnl3/zIEUGb/c0dXE+JJuEZMoRIeYTwZm4FSpP0/WM8FF9o1o81Mi/vI2fmDx45Zu6HeitDSO2wO0=
-deploy:
-  provider: script
-  script: npm run env && npm run deploy
-  skip_cleanup: true
-  on:
-    branch: master

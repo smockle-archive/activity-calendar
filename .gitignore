@@ -6,9 +6,6 @@ jspm_packages
 dist
 coverage
 
-# Serverless directories
-.serverless
-
 # dotfiles
 .env
 *.log

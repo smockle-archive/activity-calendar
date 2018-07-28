@@ -1,19 +1,7 @@
-jest.mock("request-promise");
-jest.mock("dotenv-safe");
-import { post } from "request-promise";
-import { load as dotenv } from "dotenv-safe";
-import { promisify } from "util";
-import {
-  handler as _handler,
-  HandlerRequest,
-  HandlerResponse
-} from "../src/bin/index.mjs";
-const handler = promisify(_handler);
-dotenv();
-
+// @ts-check
 describe("handler", () => {
   test("prepares outgoing data", () => {
-    const event: HandlerRequest = {
+    const event = {
       body:
         '{"createdAt":"March 17, 2018 at 02:00PM","name":"Afternoon Run","distanceMeters":"21375.5","elapsedTimeInSeconds":"7515"}'
     };
@@ -26,49 +14,45 @@ describe("handler", () => {
       method: "POST",
       uri: "https://maker.ifttt.com/trigger/IFTTT_EVENT/with/key/IFTTT_KEY"
     };
-    (post as Partial<jest.MockInstance<typeof post>>).mockResolvedValueOnce(
-      null
-    );
+    post.mockResolvedValueOnce(null);
     handler(event, null, () => {}).then(() => {
-      expect((post as any).mock.calls[0][0]).toEqual(expected);
+      expect(post.mock.calls[0][0]).toEqual(expected);
     });
   });
+
   test("sends message successfully", () => {
-    const event: HandlerRequest = {
+    const event = {
       body:
         '{"createdAt":"March 17, 2018 at 02:00PM","name":"Afternoon Run","distanceMeters":"21375.5","elapsedTimeInSeconds":"7515"}'
     };
-    const expected: HandlerResponse = {
+    const expected = {
       statusCode: 200,
       body: JSON.stringify({
         message: "Message sent!"
       })
     };
-    (post as Partial<jest.MockInstance<typeof post>>).mockResolvedValueOnce(
-      null
-    );
+    post.mockResolvedValueOnce(null);
     handler(event, null, () => {})
-      .then((data: HandlerResponse | null) => {
+      .then(data => {
         expect(data).toEqual(expected);
       })
-      .catch((error: Error | null) => {
+      .catch(error => {
         expect(error).toBeFalsy();
       });
   });
+
   test("fails to send message", () => {
-    const event: HandlerRequest = {
+    const event = {
       body:
         '{"createdAt":"March 17, 2018 at 02:00PM","name":"Afternoon Run","distanceMeters":"21375.5","elapsedTimeInSeconds":"7515"}'
     };
     const expected = new Error("HI CLAY");
-    (post as Partial<jest.MockInstance<typeof post>>).mockRejectedValueOnce(
-      expected
-    );
+    post.mockRejectedValueOnce(expected);
     handler(event, null, () => {})
-      .then((data: HandlerResponse | null) => {
+      .then(data => {
         expect(data).toBeFalsy();
       })
-      .catch((error: Error | null) => {
+      .catch(error => {
         expect(error).toEqual(expected);
       });
   });
