@@ -4,6 +4,7 @@
   "description": "Formats data from the IFTTT Strava service for the IFTTT Google Calendar service.",
   "main": "src/index",
   "scripts": {
+    "start": "sam local start-api --env-vars env.json",
     "test": "jest"
   },
   "repository": {

@@ -22,7 +22,7 @@ const post = ({ method = "POST", body = {}, headers = {}, ...options }) =>
     request.end();
   });
 
-export const handler = async (event, _, callback) => {
+exports.handler = async (event, _, callback) => {
   // Get environment variables
   const { IFTTT_EVENT, IFTTT_KEY } = process.env;
   if (!IFTTT_EVENT || !IFTTT_KEY) {
@@ -33,7 +33,9 @@ export const handler = async (event, _, callback) => {
   if (!event.body) {
     throw new Error("Missing event body");
   }
-  const { createdAt, distanceMeters, elapsedTimeInSeconds, name } = event.body;
+  const { createdAt, distanceMeters, elapsedTimeInSeconds, name } = JSON.parse(
+    event.body
+  );
   if (!createdAt || !distanceMeters || !elapsedTimeInSeconds || !name) {
     throw new Error("Missing event details");
   }
