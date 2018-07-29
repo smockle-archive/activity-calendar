@@ -22,7 +22,7 @@ const post = ({ method = "POST", body = {}, headers = {}, ...options }) =>
     request.end();
   });
 
-exports.handler = async (event, _, callback) => {
+const handler = post => async event => {
   // Get environment variables
   const { IFTTT_EVENT, IFTTT_KEY } = process.env;
   if (!IFTTT_EVENT || !IFTTT_KEY) {
@@ -64,4 +64,9 @@ exports.handler = async (event, _, callback) => {
   } catch (error) {
     throw error;
   }
+};
+
+module.exports = {
+  handler: handler(post),
+  _handler: handler
 };

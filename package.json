@@ -17,12 +17,9 @@
     "url": "https://github.com/smockle/activity-calendar/issues"
   },
   "homepage": "https://github.com/smockle/activity-calendar#readme",
-  "@std/esm": {
-    "cjs": true
-  },
   "dependencies": {},
   "devDependencies": {
     "codecov": "^3.0.0",
-    "jest": "^22.4.2"
+    "jest": "^22.4.4"
   }
 }
