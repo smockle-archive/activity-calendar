@@ -5,6 +5,12 @@ Description: >
 
     Formats data from the IFTTT Strava service for the IFTTT Google Calendar service.
 
+Parameters:
+    IFTTT_EVENT:
+        Type: String
+    IFTTT_KEY:
+        Type: String
+
 Resources:
     ActivityCalendarFunction:
         Type: AWS::Serverless::Function
@@ -14,8 +20,8 @@ Resources:
             Runtime: nodejs8.10
             Environment:
                 Variables:
-                    IFTTT_EVENT:
-                    IFTTT_KEY:
+                    IFTTT_EVENT: !Ref IFTTT_EVENT
+                    IFTTT_KEY: !Ref IFTTT_KEY
             Events:
                 ActivityCalendar:
                     Type: Api
