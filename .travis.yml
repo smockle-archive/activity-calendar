@@ -7,12 +7,12 @@ notifications:
     on_failure: always
 before_install:
 - npm install -g greenkeeper-lockfile@1
-- pip install awscli
-- pip install aws-sam-cli
+- pip install --user awscli
+- pip install --user aws-sam-cli
 before_script:
 - greenkeeper-lockfile-update
 script:
-- npm tests
+- npm test
 - sam validate
 after_script:
 - greenkeeper-lockfile-upload
