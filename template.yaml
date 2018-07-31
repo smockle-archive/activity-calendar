@@ -6,9 +6,9 @@ Description: >
     Formats data from the IFTTT Strava service for the IFTTT Google Calendar service.
 
 Parameters:
-    IFTTT_EVENT:
+    IftttEvent:
         Type: String
-    IFTTT_KEY:
+    IftttKey:
         Type: String
 
 Resources:
@@ -20,8 +20,8 @@ Resources:
             Runtime: nodejs8.10
             Environment:
                 Variables:
-                    IFTTT_EVENT: !Ref IFTTT_EVENT
-                    IFTTT_KEY: !Ref IFTTT_KEY
+                    IFTTT_EVENT: !Ref IftttEvent
+                    IFTTT_KEY: !Ref IftttKey
             Events:
                 ActivityCalendar:
                     Type: Api
