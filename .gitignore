@@ -6,10 +6,7 @@ jspm_packages
 dist
 coverage
 
-# Serverless directories
-.serverless
-
 # dotfiles
-.env
+env.json
 *.log
 .DS_Store

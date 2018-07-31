@@ -1,0 +1,37 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: >
+    activity-calendar
+
+    Formats data from the IFTTT Strava service for the IFTTT Google Calendar service.
+
+Resources:
+    ActivityCalendarFunction:
+        Type: AWS::Serverless::Function
+        Properties:
+            CodeUri: src/
+            Handler: index.handler
+            Runtime: nodejs8.10
+            Environment:
+                Variables:
+                    IFTTT_EVENT:
+                    IFTTT_KEY:
+            Events:
+                ActivityCalendar:
+                    Type: Api
+                    Properties:
+                        Path: /ingest
+                        Method: post
+
+Outputs:
+    ActivityCalendarApi:
+      Description: "API Gateway endpoint URL for Prod stage for ingest function"
+      Value: !Sub "https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/ingest/"
+
+    ActivityCalendarFunction:
+      Description: "Activity Calendar Lambda Function ARN"
+      Value: !GetAtt ActivityCalendarFunction.Arn
+
+    ActivityCalendarFunctionIamRole:
+      Description: "Implicit IAM Role created for Hello World function"
+      Value: !GetAtt ActivityCalendarFunctionRole.Arn

@@ -2,17 +2,10 @@
   "name": "activity-calendar",
   "version": "1.0.0",
   "description": "Formats data from the IFTTT Strava service for the IFTTT Google Calendar service.",
-  "files": [
-    "dist"
-  ],
-  "main": "dist/bin/index",
-  "types": "dist/bin/index.d.ts",
+  "main": "src/index",
   "scripts": {
-    "build": "bash scripts/build.sh",
-    "start": "serverless offline start",
-    "test": "jest",
-    "env": "bash scripts/env.sh",
-    "deploy": "sls deploy"
+    "start": "sam local start-api --env-vars env.json",
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -24,29 +17,9 @@
     "url": "https://github.com/smockle/activity-calendar/issues"
   },
   "homepage": "https://github.com/smockle/activity-calendar#readme",
-  "@std/esm": {
-    "cjs": true
-  },
-  "dependencies": {
-    "dotenv-safe": "^6.0.0",
-    "esm": "^3.0.55",
-    "lodash": "^4.17.4",
-    "request": "^2.85.0",
-    "request-promise": "^4.2.2"
-  },
+  "dependencies": {},
   "devDependencies": {
-    "@types/aws-lambda": "8.10.8",
-    "@types/dotenv-safe": "^5.0.0",
-    "@types/jest": "^23.1.2",
-    "@types/lodash": "^4.14.105",
-    "@types/node": "^10.3.6",
-    "@types/request": "^2.47.0",
-    "@types/request-promise": "^4.1.41",
     "codecov": "^3.0.0",
-    "jest": "^22.4.2",
-    "serverless": "^1.26.1",
-    "serverless-offline": "^3.18.0",
-    "ts-jest": "^23.0.0",
-    "typescript": "^2.8.0-rc"
+    "jest": "^22.4.4"
   }
 }
