@@ -28,7 +28,7 @@ env:
   - secure: MbtGIkUP2u29KQFEjfiFtp5Lin5qvvzTA8uh39GCGR6WY7H7e8cp1dUulUKE/3iuaLAVNeS0L9fWOWnQEHO+PV1HgCwjqtkng2MYkfye5QT8WyjQTKirLTZ0hLybuyECm6uDMc5B41qqVhUq1zxiJ2j+BMLeF0W016D+LRjUkr70MmnTld46lNE58x8VtWifOaFrnzcgdKPhaIfXnOeDN98fynVE8Y+KC/OpPv05R/WZ/d/GYQuBxSJMEJ/Ue6TIww1wJY+wZYbSVs7bFQcxhm1zXRryddb2FK0W13eP9yZlTmvTQc8cTdOsiHgFJaNEkjByWOURuMccoU8MFD0JKCX0PlgIGRizf01+WMFxon8lABoaWPoE3LN2LV9IP4lHJ3iKyZx9vWE22G7b2Zau7kwbLk3ZF2S2Bkihsa+WrODyUh5EqspZduJ56h9vLXUV/WD1gDF5J8nug657jH1wvgTfirmFm34oLyYMwh5I7cbZRWo3IWmQPHeUY+uZNWgC43MqKBzGS0GA4uP9SlVMbngGZFUY3FJa4JQHTZ48nUi8u0252NHXraByxxViJYswoebEm5tAXI+iYDlBnNIINSqstzVJl0vhOGDDkFH03vVukharUobg0xaBTYr7h39ZYcB0uQdptfMlIv/FnkBKdFakuFY1uR1c15kTitrxRqU=
 deploy:
   provider: script
-  script: sam package --template-file template.yaml --s3-bucket "$AWS_S3_BUCKET_NAME" --output-template-file packaged.yaml && sam deploy --template-file packaged.yaml --parameter-overrides IftttEvent="$IFTTT_EVENT" IftttKey="$IFTTT_KEY" --stack-name activity-calendar
+  script: sam package --template-file template.yaml --s3-bucket "$AWS_S3_BUCKET_NAME" --output-template-file packaged.yaml && sam deploy --template-file packaged.yaml --parameter-overrides IftttEvent="$IFTTT_EVENT" IftttKey="$IFTTT_KEY" --capabilities CAPABILITY_IAM --stack-name activity-calendar
   skip_cleanup: true
   on:
     branch: master
